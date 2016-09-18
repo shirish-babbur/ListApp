@@ -1,39 +1,31 @@
 package org.webonise.listapp;
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.*;
-
-/**
- * Created by webonise on 15/9/16.
- */
+import java.util.Scanner;
 public class ListApp {
 
     public static void main(String[] args) throws Exception{
-        Statement statement=null;
-        ResultSet resultset=null;
-        List <Users> userList=new ArrayList<Users>();
-        Connection connection=DbConnection.getConnection();
-        statement = connection.createStatement();
-        resultset = statement.executeQuery( "SELECT * FROM Users;" );
-        while ( resultset.next() ) {
-            Users user=new Users();
-            user.setId(resultset.getInt("id"));
-            user.setFirstName(resultset.getString("firstname"));
-            user.setAge(resultset.getInt("age"));
-            user.setLastName(resultset.getString("lastname"));
-            user.setEmail(resultset.getString("email"));
-            user.setSalary(resultset.getInt("salary"));
-            userList.add(user);
-        }
-        Collections.sort(userList,new UserComparator());
-        Iterator<Users> iterator= userList.iterator();
-        while(iterator.hasNext()){
-            Users user=(Users)iterator.next();
-            user.showDetails();
-        }
-        connection.close();
+        int choice;
+        CollectionFactory collectionFactory=new CollectionFactory();
+        DataCollection dataCollection;
+        Scanner input =new Scanner(System.in);
+        do {
+            System.out.println("Select Collection to view Data:\n1.ArrayList\n2.HashMap\n3.HashSet\n4.exit");
+            choice=input.nextInt();
+            switch (choice) {
+                case 1: dataCollection = collectionFactory.getCollection("ArrayList");
+                        dataCollection.fetchAndViewData();
+                        break;
+                case 2: dataCollection = collectionFactory.getCollection("HashMap");
+                        dataCollection.fetchAndViewData();
+                        break;
+                case 3: dataCollection = collectionFactory.getCollection("HashSet");
+                        dataCollection.fetchAndViewData();
+                        break;
+                case 4: System.out.print("Exiting");
+                        break;
+                default:
+                    System.out.println("Invalid Choice!");
+            }
+        }while (choice!=4);
     }
 
 }

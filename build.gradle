@@ -11,24 +11,6 @@ repositories {
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.3.11'
     compile 'org.wisdom-framework:postgresql:9.1-902.jdbc4_1'
-    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-}
-group 'com.webonise.'
-version '1.0-SNAPSHOT'
-
-apply plugin: 'groovy'
-apply plugin: 'java'
-
-sourceCompatibility = 1.5
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.3.11'
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.apache.commons:commons-lang3:3.4'
 }

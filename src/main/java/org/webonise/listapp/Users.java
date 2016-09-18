@@ -1,14 +1,15 @@
 package org.webonise.listapp;
 
-/**
- * Created by webonise on 15/9/16.
- */
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 public class Users {
     private int id=0;
     private String firstName="";
     private String lastName="";
     private String email="";
     private int age=-1;
+    private int salary=0;
 
     public int getSalary() {
         return salary;
@@ -16,7 +17,6 @@ public class Users {
     public void setSalary(int salary) {
         this.salary = salary;
     }
-    private int salary=0;
     public int getId() {
         return id;
     }
@@ -50,5 +50,27 @@ public class Users {
     public void showDetails(){
         System.out.print(id+"\t"+firstName+"\t"+lastName+"\t");
         System.out.println(age+"\t"+email+"\t"+salary);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o){
+            return true;
+        }
+        if (!(o instanceof Users)){
+            return false;
+        }
+        Users users = (Users) o;
+        EqualsBuilder equalsBuilder =new EqualsBuilder();
+        equalsBuilder.append(age,users.age).append(salary,users.salary).append(firstName,users.firstName);
+        equalsBuilder.append(lastName,users.lastName).append(email,users.email).append(id,users.id);
+        return equalsBuilder.isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        HashCodeBuilder hashCodeBuilder=new HashCodeBuilder();
+        hashCodeBuilder.append(age).append(firstName).append(lastName).append(email).append(id);
+         return hashCodeBuilder.toHashCode();
     }
 }

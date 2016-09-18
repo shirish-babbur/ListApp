@@ -2,9 +2,7 @@ package org.webonise.listapp;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-/**
- * Created by webonise on 15/9/16.
- */
+
 public class DbConnection {
     private static DbConnection dbconnection=new DbConnection();
 
