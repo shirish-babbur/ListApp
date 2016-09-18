@@ -15,8 +15,7 @@ public class DisplayCollection {
                 Users user = (Users) entry.getValue();
                 user.showDetails();
             }
-        }
-        else{
+        } else{
             System.out.println("Map is Empty!");
         }
     }
@@ -27,8 +26,7 @@ public class DisplayCollection {
                 Users user = (Users) iterator.next();
                 user.showDetails();
             }
-        }
-        else{
+        } else{
             System.out.println("List is Empty!");
         }
     }
@@ -39,8 +37,7 @@ public class DisplayCollection {
                 Users user = (Users) iterator.next();
                 user.showDetails();
             }
-        }
-        else{
+        } else{
             System.out.println("Set is Empty!");
         }
     }
