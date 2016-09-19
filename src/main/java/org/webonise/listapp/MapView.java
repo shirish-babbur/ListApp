@@ -9,13 +9,13 @@ public class MapView implements DataCollection {
 
     public void fetchAndViewData() throws Exception {
         ResultSet resultset = null;
-        FetchData fetchData = new FetchData();
+        DataFetcher dataFetcher = new DataFetcher();
         DisplayCollection displayCollection = new DisplayCollection();
         Map<Integer,Users> usersMap = new HashMap<Integer,Users>();
         Map<Integer,Users> sortedUserMap = new TreeMap<Integer, Users>();
-        resultset = fetchData.getResultSet();
+        resultset = dataFetcher.getResultSet();
         while ( resultset.next() ) {
-            usersMap.put(fetchData.getData(resultset).getId(),fetchData.getData(resultset));
+            usersMap.put(dataFetcher.getData(resultset).getId(), dataFetcher.getData(resultset));
         }
         System.out.println("Size of List:"+usersMap.size());
         System.out.println("Before Sorting:");
@@ -24,6 +24,6 @@ public class MapView implements DataCollection {
         System.out.println("After Sorting:");
         displayCollection.Display(sortedUserMap);
         resultset.close();
-        fetchData.closeConnection();
+        dataFetcher.closeConnection();
     }
 }

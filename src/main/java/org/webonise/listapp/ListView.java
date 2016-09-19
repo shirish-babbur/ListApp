@@ -8,12 +8,12 @@ import java.util.List;
 public class ListView implements DataCollection {
     public void fetchAndViewData() throws Exception {
         ResultSet resultset = null;
-        FetchData fetchData = new FetchData();
+        DataFetcher dataFetcher = new DataFetcher();
         List<Users> userList = new ArrayList<Users>();
         DisplayCollection displayCollection = new DisplayCollection();
-        resultset = fetchData.getResultSet();
+        resultset = dataFetcher.getResultSet();
         while ( resultset.next() ) {
-            userList.add(fetchData.getData(resultset));
+            userList.add(dataFetcher.getData(resultset));
         }
         System.out.println("Size of List:"+userList.size());
         System.out.println("Before Sorting");
@@ -22,6 +22,6 @@ public class ListView implements DataCollection {
         System.out.println("After Sorting");
         displayCollection.Display(userList);
         resultset.close();
-        fetchData.closeConnection();
+        dataFetcher.closeConnection();
     }
 }

@@ -8,13 +8,13 @@ import java.util.TreeSet;
 public class SetView implements DataCollection {
     public void fetchAndViewData() throws Exception {
         ResultSet resultset = null;
-        FetchData fetchData = new FetchData();
+        DataFetcher dataFetcher = new DataFetcher();
         Set<Users> usersHashSet = new HashSet<Users>();
         Set<Users> userTreeSet = new TreeSet<Users>(new UserComparator());
         DisplayCollection displayCollection = new DisplayCollection();
-        resultset = fetchData.getResultSet();
+        resultset = dataFetcher.getResultSet();
         while ( resultset.next() ) {
-            usersHashSet.add(fetchData.getData(resultset));
+            usersHashSet.add(dataFetcher.getData(resultset));
         }
         System.out.println("Size of List:"+usersHashSet.size());
         System.out.println("Before Sorting:");
@@ -23,6 +23,6 @@ public class SetView implements DataCollection {
         System.out.println("After Sorting:");
         displayCollection.Display(userTreeSet);
         resultset.close();
-        fetchData.closeConnection();
+        dataFetcher.closeConnection();
     }
 }

@@ -16,7 +16,6 @@ public class DbConnection {
         } catch (Exception e) {
             System.out.println("Connection Failed.Check console");
             e.printStackTrace();
-            return null;
         }
         if (connection == null) {
             System.out.println("Failed to make connection!");
