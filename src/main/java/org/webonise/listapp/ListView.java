@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class ListView implements DataCollection {
+    @Override
     public void fetchAndViewData() throws Exception {
         ResultSet resultset = null;
         DataFetcher dataFetcher = new DataFetcher();

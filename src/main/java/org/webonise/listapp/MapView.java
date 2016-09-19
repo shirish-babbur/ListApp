@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class MapView implements DataCollection {
-
+    @Override
     public void fetchAndViewData() throws Exception {
         ResultSet resultset = null;
         DataFetcher dataFetcher = new DataFetcher();

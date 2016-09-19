@@ -6,6 +6,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class SetView implements DataCollection {
+    @Override
     public void fetchAndViewData() throws Exception {
         ResultSet resultset = null;
         DataFetcher dataFetcher = new DataFetcher();

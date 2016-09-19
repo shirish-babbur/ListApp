@@ -18,22 +18,22 @@ public class ListApp {
             try {
                 switch (choice) {
                     case Arraylist:
-                                    dataCollection = collectionFactory.getCollection(Arraylist);
-                                    dataCollection.fetchAndViewData();
-                                    break;
+                        dataCollection = collectionFactory.getCollection(Arraylist);
+                        dataCollection.fetchAndViewData();
+                        break;
                     case HashMap:
-                                    dataCollection = collectionFactory.getCollection(HashMap);
-                                    dataCollection.fetchAndViewData();
-                                    break;
+                        dataCollection = collectionFactory.getCollection(HashMap);
+                        dataCollection.fetchAndViewData();
+                        break;
                     case HashSet:
-                                    dataCollection = collectionFactory.getCollection(HashSet);
-                                    dataCollection.fetchAndViewData();
-                                    break;
+                        dataCollection = collectionFactory.getCollection(HashSet);
+                        dataCollection.fetchAndViewData();
+                        break;
                     case Exit:
-                                    System.out.print("Exiting");
-                                    break;
+                        System.out.print("Exiting");
+                        break;
                     default:
-                                    System.out.println("Invalid Choice!");
+                        System.out.println("Invalid Choice!");
                 }
             }catch (Exception e){
                 e.printStackTrace();
