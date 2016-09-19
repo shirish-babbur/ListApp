@@ -6,38 +6,38 @@ import java.util.Map;
 import java.util.Set;
 
 public class DisplayCollection {
-    public void Display(Map userMap){
-        if(!userMap.isEmpty()){
+    public void Display(Map userMap) {
+        if(!userMap.isEmpty()) {
             Iterator iterator = userMap.entrySet().iterator();
             while (iterator.hasNext()) {
-                Map.Entry entry=(Map.Entry)iterator.next();
+                Map.Entry entry = (Map.Entry)iterator.next();
                 System.out.print("Key:"+entry.getKey()+"\t Value:");
                 Users user = (Users) entry.getValue();
                 user.showDetails();
             }
-        } else{
+        } else {
             System.out.println("Map is Empty!");
         }
     }
-    public void Display(List userList){
-        if(!userList.isEmpty()){
+    public void Display(List userList) {
+        if(!userList.isEmpty()) {
             Iterator<Users> iterator = userList.iterator();
             while (iterator.hasNext()) {
                 Users user = (Users) iterator.next();
                 user.showDetails();
             }
-        } else{
+        } else {
             System.out.println("List is Empty!");
         }
     }
-    public void Display(Set userSet){
-        if(!userSet.isEmpty()){
+    public void Display(Set userSet) {
+        if(!userSet.isEmpty()) {
             Iterator<Users> iterator = userSet.iterator();
             while (iterator.hasNext()) {
                 Users user = (Users) iterator.next();
                 user.showDetails();
             }
-        } else{
+        } else {
             System.out.println("Set is Empty!");
         }
     }
