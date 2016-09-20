@@ -1,8 +1,12 @@
 package org.webonise.listapp;
+
+import java.sql.SQLException;
+
 public interface DataCollection {
-     /**
-      * This interface will fetch data from database and present it using different collections.
-      * @throws Exception
-      */
-     void fetchAndViewData()throws Exception;
+    /**
+     * This interface will fetch data from database and present it using different collections.
+     *
+     * @throws SQLException
+     */
+    void fetchAndViewData() throws SQLException;
 }

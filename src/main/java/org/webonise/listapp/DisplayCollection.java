@@ -23,7 +23,7 @@ public class DisplayCollection {
         if(!userList.isEmpty()) {
             Iterator<Users> iterator = userList.iterator();
             while (iterator.hasNext()) {
-                Users user = (Users) iterator.next();
+                Users user = iterator.next();
                 user.showDetails();
             }
         } else {
@@ -34,7 +34,7 @@ public class DisplayCollection {
         if(!userSet.isEmpty()) {
             Iterator<Users> iterator = userSet.iterator();
             while (iterator.hasNext()) {
-                Users user = (Users) iterator.next();
+                Users user = iterator.next();
                 user.showDetails();
             }
         } else {

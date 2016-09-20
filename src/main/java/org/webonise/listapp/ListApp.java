@@ -1,5 +1,6 @@
 package org.webonise.listapp;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class ListApp {
@@ -7,6 +8,7 @@ public class ListApp {
     static final String HashMap = "HashMap";
     static final String HashSet = "HashSet";
     static final String Exit = "exit";
+
     public static void main(String[] args) {
         String choice;
         CollectionFactory collectionFactory = new CollectionFactory();
@@ -35,9 +37,9 @@ public class ListApp {
                     default:
                         System.out.println("Invalid Choice!");
                 }
-            }catch (Exception e){
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }while (!choice.equalsIgnoreCase(Exit));
+        } while (!choice.equalsIgnoreCase(Exit));
     }
 }
